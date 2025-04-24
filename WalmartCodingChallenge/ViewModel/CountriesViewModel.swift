@@ -52,9 +52,14 @@ final class CountriesViewModel: ObservableObject {
     // Sets up Combine pipeline to debounce and filter search results
     private func setupSearchBinding() {
         $searchText
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main) // adds slight delay
             .removeDuplicates()
             .sink { [weak self] text in
-                self?.filterCountries(with: text)
+                if text.isEmpty {
+                    self?.resetSearch()
+                } else {
+                    self?.filterCountries(with: text)
+                }
             }
             .store(in: &cancellables)
     }
@@ -66,6 +71,13 @@ final class CountriesViewModel: ObservableObject {
         filteredCountries = countries.filter {
             ($0.name?.lowercased().contains(query) ?? false)
                 || ($0.capital?.lowercased().contains(query) ?? false)
+        }
+    }
+    
+    func resetSearch() {
+        DispatchQueue.main.async { [weak self] in
+            self?.searchText = ""
+            self?.filteredCountries = self?.countries ?? []
         }
     }
 }

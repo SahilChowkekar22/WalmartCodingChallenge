@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, UISearchBarDelegate {
 
     // UI
     private let tableView = UITableView()
@@ -54,6 +54,7 @@ final class ViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search countries"
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
@@ -66,6 +67,9 @@ final class ViewController: UIViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        countriesViewModel.resetSearch()
     }
 }
 
@@ -102,4 +106,5 @@ extension ViewController: UISearchResultsUpdating {
         countriesViewModel.searchText = text
     }
 }
+
 
