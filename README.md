@@ -42,7 +42,7 @@ The app is built using the **MVVM (Model-View-ViewModel)** architecture pattern:
 
 | Country Detail List | Search Country |
 |-------------|----------------|
-| ![Home](Screenshots/home.png) | ![Detail](Screenshots/detail.png) |
+| ![Home](https://github.com/SahilChowkekar22/WalmartCodingChallenge/blob/main/Img/CountryList.png) | ![Detail](https://github.com/SahilChowkekar22/WalmartCodingChallenge/blob/main/Img/SearchList.png) |
 
 > These images show the main flow of the app, including the country list and search view.
 
