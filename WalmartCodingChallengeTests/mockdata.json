@@ -1,0 +1,34 @@
+[
+  {
+    "capital": "Kabul",
+    "code": "AF",
+    "currency": {
+      "code": "AFN",
+      "name": "Afghan afghani",
+      "symbol": "؋"
+    },
+    "flag": "https://restcountries.eu/data/afg.svg",
+    "language": {
+      "code": "ps",
+      "name": "Pashto"
+    },
+    "name": "Afghanistan",
+    "region": "AS"
+  },
+  {
+    "capital": "Mariehamn",
+    "code": "AX",
+    "currency": {
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    },
+    "flag": "https://restcountries.eu/data/ala.svg",
+    "language": {
+      "code": "sv",
+      "name": "Swedish"
+    },
+    "name": "Åland Islands",
+    "region": "EU"
+  }
+]
